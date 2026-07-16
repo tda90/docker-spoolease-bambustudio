@@ -1,0 +1,7 @@
+<CommunityApplications>
+  <Profile>
+    Community-maintained Unraid/Docker packaging of yanshay's SpoolEase Custom Bambu Studio — a web-accessible, containerized build of Bambu Studio with integrated SpoolEase filament management. The slicer and SpoolEase are the work of yanshay (https://github.com/yanshay); this repository only packages that work into a container. For support with the slicer or SpoolEase itself, use the SpoolEase project channels. For packaging/container issues, use this repository's issues.
+  </Profile>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/bambustudio-logo.png</Icon>
+  <WebPage>https://github.com/tda90/docker-spoolease-bambustudio</WebPage>
+</CommunityApplications>
