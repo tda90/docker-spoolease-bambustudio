@@ -4,7 +4,7 @@ FROM ghcr.io/linuxserver/baseimage-selkies:ubunturesolute
 ARG BUILD_DATE
 ARG VERSION
 ARG BAMBUSTUDIO_VERSION
-LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL build_version="SpoolEase-BambuStudio (packaged by tda90, based on linuxserver/docker-bambustudio) version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="tda90"
 # title
 ENV TITLE=BambuStudio \
