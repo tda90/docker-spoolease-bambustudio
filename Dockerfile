@@ -54,6 +54,8 @@ RUN \
     /tmp/*
 # add local files
 COPY /root /
+# ensure custom init scripts are executable (web commits drop the +x bit)
+RUN chmod +x /custom-cont-init.d/*.sh
 # ports and volumes
 EXPOSE 3001
 VOLUME /config
