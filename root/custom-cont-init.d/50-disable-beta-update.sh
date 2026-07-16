@@ -2,19 +2,18 @@
 CONF_DIR="/config/.config/BambuStudio"
 CONF="$CONF_DIR/BambuStudio.conf"
 
-# Pre-seed BEFORE Bambu launches: if no config exists yet, create one with the
-# beta flag already false, so the app never shows the beta prompt on first run.
+# Pre-seed BEFORE Bambu launches so the beta prompt never shows on first run.
 mkdir -p "$CONF_DIR"
 if [ ! -f "$CONF" ]; then
-  echo '{ "app": { "enable_beta_version_update": "false" } }' > "$CONF"
+  echo '{ "app": { "enable_beta_version_update": false } }' > "$CONF"
   chown -R abc:abc "$CONF_DIR"
 fi
 
 # Watcher backup: if the app ever rewrites the flag to true, flip it back.
 disable_beta() {
-  if [ -f "$CONF" ] && [ "$(jq -r '.app.enable_beta_version_update // "false"' "$CONF")" = "true" ]; then
+  if [ -f "$CONF" ] && [ "$(jq -r '.app.enable_beta_version_update // false' "$CONF")" = "true" ]; then
     tmp=$(mktemp)
-    jq '.app.enable_beta_version_update = "false"' "$CONF" > "$tmp" && mv "$tmp" "$CONF"
+    jq '.app.enable_beta_version_update = false' "$CONF" > "$tmp" && mv "$tmp" "$CONF"
     chown abc:abc "$CONF"
   fi
 }
