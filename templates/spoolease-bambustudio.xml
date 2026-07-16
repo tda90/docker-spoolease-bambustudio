@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>SpoolEase-BambuStudio</Name>
+  <Repository>ghcr.io/tda90/spoolease-bambustudio:latest</Repository>
+  <Registry>https://ghcr.io/tda90/spoolease-bambustudio</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/tda90/docker-spoolease-bambustudio/issues</Support>
+  <Project>https://github.com/tda90/docker-spoolease-bambustudio</Project>
+  <Overview>Web-accessible SpoolEase Custom Bambu Studio in a browser. This is a community packaging of yanshay's SpoolEase Bambu Studio fork (https://github.com/yanshay/SpoolEase-BambuStudio) - Bambu Studio with integrated SpoolEase filament management - built on the linuxserver/docker-bambustudio Selkies web-desktop base. Access over HTTPS on port 3001 and accept the self-signed certificate. To connect a LAN-only printer, add it manually by IP (Device -&gt; Bind with Access Code). All application credit belongs to yanshay; this template only packages that work. Unofficial, not affiliated with Bambu Lab.</Overview>
+  <Category>Productivity:</Category>
+  <WebUI>https://[IP]:[PORT:3001]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/tda90/docker-spoolease-bambustudio/main/templates/spoolease-bambustudio.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/bambustudio-logo.png</Icon>
+  <ExtraParams>--shm-size=1gb</ExtraParams>
+  <Config Name="WebUI HTTPS" Target="3001" Default="3001" Mode="tcp" Description="Bambu Studio web desktop (HTTPS)" Type="Port" Display="always" Required="true" Mask="false">3001</Config>
+  <Config Name="Config Storage" Target="/config" Default="/mnt/user/appdata/spoolease-bambustudio" Mode="rw" Description="Stores Bambu Studio settings, presets, and the SpoolEase-linked config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/spoolease-bambustudio</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="User ID" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Group ID" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+  <Config Name="TZ" Target="TZ" Default="Europe/Zurich" Mode="" Description="Timezone" Type="Variable" Display="advanced" Required="false" Mask="false">Europe/Zurich</Config>
+</Container>
