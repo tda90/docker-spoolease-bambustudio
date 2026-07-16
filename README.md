@@ -31,3 +31,11 @@ If the printer is on a separate VLAN, ensure the host can route to it. For autom
 ## License
 
 AGPL-3.0, matching upstream Bambu Studio.
+
+## Acknowledgements & disclosure
+
+This container packaging and its CI pipeline were assembled with AI assistance (Claude) — the Dockerfile adaptation, the build workflow, and the configuration tweaks. It is a community packaging effort and is provided as-is; please review before use.
+
+**All credit for the actual application belongs to [yanshay](https://github.com/yanshay)**, who created and maintains the [SpoolEase](https://spoolease.io) project and the [SpoolEase Bambu Studio fork](https://github.com/yanshay/SpoolEase-BambuStudio) that this image runs. This repository only packages that work into a container; it does not modify the slicer itself beyond disabling the upstream beta-update prompt to prevent the fork being overwritten.
+
+If you find SpoolEase useful, support the original project rather than this packaging repo.
